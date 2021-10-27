@@ -5,7 +5,6 @@
 package com.mycompany.gwtimetracker.frontend;
 
 import com.mycompany.gwtimetracker.backend.Chrono;
-import com.mycompany.gwtimetracker.backend.Chrono2;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Timer;
