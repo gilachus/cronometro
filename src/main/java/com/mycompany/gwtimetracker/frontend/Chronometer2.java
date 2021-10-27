@@ -10,10 +10,7 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- *
- * @author DELL
- */
+
 public class Chronometer2 extends javax.swing.JFrame {
     Date date = new Date();  
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");  
@@ -35,7 +32,7 @@ public class Chronometer2 extends javax.swing.JFrame {
      */
     public Chronometer2() {
         initComponents();
-        timer.schedule(timertask, 0, 1000);
+        timer.scheduleAtFixedRate(timertask, 0, 1000);
         jLabelDate.setText(strDate);
     }
 

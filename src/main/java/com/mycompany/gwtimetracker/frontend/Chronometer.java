@@ -8,10 +8,8 @@ import com.mycompany.gwtimetracker.backend.Chrono;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
-/**
- *
- * @author DELL
- */
+
+
 public class Chronometer extends javax.swing.JFrame {
     private int duration;
     Chrono chrono = new Chrono();

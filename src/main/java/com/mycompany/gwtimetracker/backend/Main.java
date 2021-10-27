@@ -6,10 +6,7 @@ package com.mycompany.gwtimetracker.backend;
 
 import com.mycompany.gwtimetracker.frontend.Login;
 
-/**
- *
- * @author DELL
- */
+
 public class Main {
     public static void main(String[] args){
         Login login = new Login();

@@ -4,10 +4,7 @@
  */
 package com.mycompany.gwtimetracker.backend;
 
-/**
- *
- * @author DELL
- */
+
 public class Chrono {
     private int duration;
     private int seconds;

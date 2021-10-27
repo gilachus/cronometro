@@ -4,10 +4,7 @@
  */
 package com.mycompany.gwtimetracker.frontend;
 
-/**
- *
- * @author DELL
- */
+
 public class Login extends javax.swing.JFrame {
 
     /**

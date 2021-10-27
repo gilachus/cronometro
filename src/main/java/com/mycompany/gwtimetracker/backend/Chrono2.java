@@ -7,10 +7,7 @@ package com.mycompany.gwtimetracker.backend;
 import java.util.Date;
 import java.util.TimerTask;
 
-/**
- *
- * @author DELL
- */
+
 public class Chrono2 extends TimerTask{
     
     @Override
