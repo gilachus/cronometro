@@ -2,34 +2,40 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.gwtimetracker.frontend;
+package com.mycompany.timetracker.frontend;
 
-import com.mycompany.gwtimetracker.backend.Chrono;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.Timer;
+import com.mycompany.timetracker.backend.Chrono;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
-public class Chronometer extends javax.swing.JFrame {
-    private int duration;
-    Chrono chrono = new Chrono();
+public class Chronometer2 extends javax.swing.JFrame {
+    Date date = new Date();  
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");  
+    String strDate = formatter.format(date);   
     
-    Timer timer = new Timer(1000, new ActionListener(){
+    int duration;
+    Chrono chrono = new Chrono();
+    Timer timer = new Timer();
+    TimerTask timertask = new TimerTask() {
         @Override
-        public void actionPerformed(ActionEvent e){
+        public void run() {
             duration = chrono.getDuration()+1000;
             chrono.setDuration(duration);
             jLabelChrono.setText(chrono.stringTime());
-            
-        }
-    });
+        }     
+    };
     /**
-     * Creates new form Timekeeper
+     * Creates new form Chronometer2
      */
-    public Chronometer() {
+    public Chronometer2() {
         initComponents();
-        timer.start();
+        timer.scheduleAtFixedRate(timertask, 0, 1000);
+        jLabelDate.setText(strDate);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -140,21 +146,20 @@ public class Chronometer extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Chronometer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Chronometer2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Chronometer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Chronometer2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Chronometer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Chronometer2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Chronometer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Chronometer2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Chronometer().setVisible(true);
+                new Chronometer2().setVisible(true);
             }
         });
     }
